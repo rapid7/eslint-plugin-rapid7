@@ -24,9 +24,12 @@ class MyClass {
 
 ```
 
-### Options
+## Options
 
-This rule has no options
+### ignore
+
+An array of static properties to ignore. It's set to `[]` by default.
+If provided, it must be an `Array<String>`.
 
 ## Examples
 The following patterns are considered problems:
@@ -36,7 +39,7 @@ The following patterns are considered problems:
 class MyClass {
   static favoriteColor; /*error Static class property 'favoriteColor' is not in screaming snake case.*/
   static my_favorite_color = 'black'; /*error Static class property 'my_favorite_color' is not in screaming snake case.*/
-  static favorite = 'black'; /*error Static class property 'favorite' is not in screaming snake case.*/
+  static propTypes = {}; /*error Static class property 'propTypes' is not in screaming snake case.*/
   static checkNumber = () => {}; /*error Static class property 'checkNumber' is not in screaming snake case.*/
 }
 ```
@@ -44,11 +47,12 @@ class MyClass {
 The following patterns are not considered problems:
 
 ```js
-/*eslint static-screaming-snake: 2*/
+/*eslint static-screaming-snake: [2, {ignore: ['propTypes']}]*/
 class MyClass {
   static FAVORITE_COLOR;
   static FAVORITECOLOR = 'white'; // Valid because rule is blind to words
   static MY_FAVORITE_COLOR = 'black';
+  static propTypes = {}; // Valid because propTypes is explicitly ignored
   static checkNumber() {}; // Valid because it is a static method
   favoriteColor = 'black'; // Valid because property is not static
 }
