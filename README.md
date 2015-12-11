@@ -7,14 +7,24 @@ Rapid7 specific linting rules for ESLint
 
 Install [ESLint](https://www.github.com/eslint/eslint) either locally or globally.
 
+
 ```sh
+# locally
 $ npm install eslint
+
+# globally
+$ npm install -g eslint
 ```
 
 If you installed `ESLint` globally, you have to install Rapid7 plugin globally too. Otherwise, install it locally.
 
 ```sh
+# locally
 $ npm install eslint-plugin-rapid7
+
+# globally
+$ npm install -g eslint-plugin-rapid7
+
 ```
 
 # Configuration
