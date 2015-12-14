@@ -6,7 +6,7 @@ module.exports = {
     'static-magic-number': require('./lib/rules/static-magic-numbers')
   },
   rulesConfig: {
-    'magic-num': [2, {ignore: [], detectObjects: false, enforceConst: false, allowStatic: false}],
-    'static-screaming-snake': [2]
+    'static-magic-number': [0, {ignore: [], detectObjects: false, enforceConst: false, allowStatic: false}],
+    'static-screaming-snake': [0]
   }
 };

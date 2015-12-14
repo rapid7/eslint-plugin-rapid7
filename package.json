@@ -1,44 +1,10 @@
 {
-  "_args": [
-    [
-      "eslint-plugin-rapid7",
-      ""
-    ]
-  ],
-  "_from": "eslint-plugin-rapid7@*",
-  "_id": "eslint-plugin-rapid7@3.11.3",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/eslint-plugin-rapid7",
-  "_nodeVersion": "5.1.0",
-  "_npmUser": {
-    "email": "btesser@rapid7.com",
-    "name": "btesser"
-  },
-  "_npmVersion": "3.3.12",
-  "_phantomChildren": {},
-  "_requested": {
-    "name": "eslint-plugin-rapid7",
-    "raw": "eslint-plugin-rapid7",
-    "rawSpec": "",
-    "scope": null,
-    "spec": "*",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "#USER"
-  ],
-  "_resolved": "https://registry.npmjs.org/eslint-plugin-rapid7/-/eslint-plugin-rapid7-3.11.3.tgz",
-  "_shasum": "c4145e4d03ff86849352ee3720e4c263308dc503",
-  "_shrinkwrap": null,
-  "_spec": "eslint-plugin-rapid7",
-  "_where": "",
   "author": {
     "email": "btesser@rapid7.com",
     "name": "Ben Tesser"
   },
   "bugs": {
-    "url": "https://github.com/yannickcr/eslint-plugin-rapid7/issues"
+    "url": "https://github.com/rapid7/eslint-plugin-rapid7/issues"
   },
   "dependencies": {},
   "description": "Rapid7 specific linting rules for ESLint",
@@ -50,17 +16,12 @@
     "mocha": "2.3.4"
   },
   "directories": {},
-  "dist": {
-    "shasum": "c4145e4d03ff86849352ee3720e4c263308dc503",
-    "tarball": "http://registry.npmjs.org/eslint-plugin-rapid7/-/eslint-plugin-rapid7-3.11.3.tgz"
-  },
   "files": [
     "LICENSE",
     "README.md",
     "index.js",
     "lib"
   ],
-  "gitHead": "d55b8660ccc62ee3a3dd515ddd6041cba44bf3d2",
   "homepage": "https://github.com/rapid7/eslint-plugin-rapid7",
   "keywords": [
     "eslint",
@@ -81,13 +42,7 @@
   "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yannickcr/eslint-plugin-rapid7.git"
+    "url": "git+https://github.com/rapid7/eslint-plugin-rapid7.git"
   },
-  "scripts": {
-    "coveralls": "cat ./reports/coverage/lcov.info | coveralls",
-    "lint": "eslint ./",
-    "test": "npm run lint && npm run unit-test",
-    "unit-test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha tests/**/*.js -- --reporter dot"
-  },
-  "version": "3.11.3"
+  "version": "0.0.1"
 }
