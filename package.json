@@ -89,5 +89,5 @@
     "test": "npm run lint && npm run unit-test",
     "unit-test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha tests/**/*.js -- --reporter dot"
   },
-  "version": "3.11.3"
+  "version": "5.0.0"
 }
