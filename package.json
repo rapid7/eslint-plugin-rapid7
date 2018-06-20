@@ -27,5 +27,5 @@
     "url": "git+https://github.com/rapid7/eslint-plugin-rapid7.git"
   },
   "scripts": {},
-  "version": "7.0.0-1"
+  "version": "7.0.0-2"
 }
