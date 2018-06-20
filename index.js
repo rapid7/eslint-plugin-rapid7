@@ -1,5 +1,5 @@
 module.exports = {
   rules: {
-    'object-property-newline': require('./lib/rules/object-property-newline'),
+    'named-import-newline': require('./lib/rules/named-import-newline'),
   },
 };
