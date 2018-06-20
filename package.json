@@ -6,7 +6,9 @@
   "bugs": {
     "url": "https://github.com/yannickcr/eslint-plugin-rapid7/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "natural-compare": "^1.4.0"
+  },
   "description": "Rapid7 specific linting rules for ESLint",
   "devDependencies": {
     "babel-eslint": "8.2.3",
