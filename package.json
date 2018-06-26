@@ -11,8 +11,8 @@
   },
   "description": "Rapid7 specific linting rules for ESLint",
   "devDependencies": {
-    "babel-eslint": "8.2.3",
-    "eslint": "4.19.1"
+    "babel-eslint": "8.2.5",
+    "eslint": "5.0.1"
   },
   "homepage": "https://github.com/rapid7/eslint-plugin-rapid7",
   "keywords": [
