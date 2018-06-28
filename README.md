@@ -1,69 +1,38 @@
-ESLint Plugin Rapid7
-===================
+# eslint-plugin-rapid7
 
-Rapid7 specific linting rules for ESLint
+Rapid7-specific linting rules for ESLint
 
-# Installation
+## Installation
 
-Install [ESLint](https://www.github.com/eslint/eslint) either locally or globally.
-
+Install [ESLint](https://www.github.com/eslint/eslint) as well as the plugin.
 
 ```sh
-# locally
-$ npm install eslint
-
-# globally
-$ npm install -g eslint
+$ npm install eslint eslint-plugin-rapid7 --save-dev
 ```
 
-If you installed `ESLint` globally, you have to install Rapid7 plugin globally too. Otherwise, install it locally.
+## Configuration
 
-```sh
-# locally
-$ npm install eslint-plugin-rapid7
-
-# globally
-$ npm install -g eslint-plugin-rapid7
-
-```
-
-# Configuration
-
-Add `plugins` section and specify ESLint-plugin-rapid7 as a plugin.
+Add `plugins` section and specify `eslint-plugin-rapid7` as a plugin to your `.eslintrc`.
 
 ```json
 {
-  "plugins": [
-    "rapid7"
-  ]
+  "plugins": ["rapid7"]
 }
 ```
 
-If it is not already the case you must also configure `ESLint` to support JSX.
-
-```json
-{
-  "ecmaFeatures": {
-    "classes": true
-  },
-  "env": {
-    "es6": true
-  }
-}
-```
-
-Finally, enable all of the rules that you would like to use.
+Enable the rules that you would like to use.
 
 ```json
 {
   "rules": {
-    "rapid7/static-magic-numbers": 1,
-    "rapid7/static-screaming-snake": 1
+    "rapid7/named-import-newline": 1,
+    "rapid7/sort-object-keys": [2, {"caseSensitive": false}]
   }
 }
 ```
 
-# List of supported rules
+## List of supported rules
 
-* [static-magic-numbers](docs/rules/static-magic-numbers.md): Prevents the use of magic numbers in certain cases
-* [static-screaming-snake](docs/rules/static-screaming-snake.md): Enforce static variables be in screaming snake case
+- [named-import-newline](docs/named-import-newline.md): Enforce newlines between named imports from a package (fixable)
+- [no-trailing-underscore](docs/no-trailing-underscore.md): Enforce no trailing underscore on variable / method names
+- [sort-object-keys](docs/sort-object-keys.md): Enforce object keys sorted alphabetically (fixable)
