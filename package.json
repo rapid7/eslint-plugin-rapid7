@@ -25,7 +25,7 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "babel-eslint": "^8.2.5",
-    "eslint": "5.0.1"
+    "eslint": "^5.0.1"
   },
   "homepage": "https://github.com/rapid7/eslint-plugin-rapid7",
   "keywords": [
@@ -37,6 +37,9 @@
   "license": "MIT",
   "main": "index.js",
   "name": "eslint-plugin-rapid7",
+  "peerDependencies": {
+    "eslint": "^5.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rapid7/eslint-plugin-rapid7.git"
