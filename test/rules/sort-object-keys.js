@@ -3,7 +3,7 @@ const test = require('ava');
 const {RuleTester} = require('eslint');
 
 const ruleTester = new RuleTester({
-  parser: 'babel-eslint',
+  parser: require.resolve('babel-eslint'),
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',

@@ -12,8 +12,8 @@
   "description": "Rapid7 specific linting rules for ESLint",
   "devDependencies": {
     "ava": "^3.14.0",
-    "babel-eslint": "^8.2.5",
-    "eslint": "^5.0.1"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.0.0"
   },
   "homepage": "https://github.com/rapid7/eslint-plugin-rapid7",
   "keywords": [
@@ -26,7 +26,7 @@
   "main": "index.js",
   "name": "eslint-plugin-rapid7",
   "peerDependencies": {
-    "eslint": "^5.0.0"
+    "eslint": "^6.0.0"
   },
   "repository": {
     "type": "git",
