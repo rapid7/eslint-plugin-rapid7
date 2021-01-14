@@ -1,31 +1,19 @@
 {
   "author": {
-    "name": "Tony Quetano",
-    "email": "tony_quetano@rapid7.com"
-  },
-  "ava": {
-    "babel": "inherit",
-    "failFast": true,
-    "files": [
-      "test/**/*.js"
-    ],
-    "require": [],
-    "source": [
-      "lib/rules/*.js"
-    ],
-    "verbose": true
+    "name": "Rapid7 UI Developers",
+    "email": "ui_developers@rapid7.com"
   },
   "bugs": {
-    "url": "https://github.com/yannickcr/eslint-plugin-rapid7/issues"
+    "url": "https://github.com/rapid7/eslint-plugin-rapid7/issues"
   },
   "dependencies": {
     "natural-compare": "^1.4.0"
   },
   "description": "Rapid7 specific linting rules for ESLint",
   "devDependencies": {
-    "ava": "^0.25.0",
-    "babel-eslint": "^8.2.5",
-    "eslint": "^5.0.1"
+    "ava": "^3.14.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.17.0"
   },
   "homepage": "https://github.com/rapid7/eslint-plugin-rapid7",
   "keywords": [
@@ -38,7 +26,7 @@
   "main": "index.js",
   "name": "eslint-plugin-rapid7",
   "peerDependencies": {
-    "eslint": "^5.0.0"
+    "eslint": "^7.0.0"
   },
   "repository": {
     "type": "git",

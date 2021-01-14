@@ -1,21 +1,20 @@
-// test
 const test = require('ava');
 const {RuleTester} = require('eslint');
 
 const ruleTester = new RuleTester({
-  parser: 'babel-eslint',
+  parser: require.resolve('babel-eslint'),
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
   },
 });
 
-// src
-const rule = require('lib/rules/sort-object-keys');
+const ruleName = 'sort-object-keys';
+const ruleFile = require('lib/rules/sort-object-keys');
 
 test('if the rule will validate the basic usage', t => {
   try {
-    ruleTester.run('sort-object-keys', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `const object = {
@@ -48,17 +47,17 @@ foo: 'foo',
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate the numeric key usage', t => {
   try {
-    ruleTester.run('sort-object-keys', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `const object = {
-  1: 'baz', 
+  1: 'baz',
   2: 'foo',
   3: 'bar',
 }`.trim(),
@@ -87,13 +86,13 @@ test('if the rule will validate the numeric key usage', t => {
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate the usage with comments but not fix them', t => {
   try {
-    ruleTester.run('sort-object-keys', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `const object = {
@@ -129,13 +128,13 @@ test('if the rule will validate the usage with comments but not fix them', t => 
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate usage with computed properties', t => {
   try {
-    ruleTester.run('sort-object-keys', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `const object = {
@@ -168,13 +167,13 @@ foo: 'foo',
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate usage with complex computed properties but not fix them', t => {
   try {
-    ruleTester.run('sort-object-keys', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `const object = {
@@ -210,20 +209,20 @@ test('if the rule will validate usage with complex computed properties but not f
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate usage with spread operations', t => {
   try {
-    ruleTester.run('sort-object-keys', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `const object = {
   bar: 'bar',
   foo: 'foo',
   ...spread,
-  baz: 'baz', 
+  baz: 'baz',
   quz: 'quz',
   ...otherSpread,
   blah: 'blah',
@@ -264,20 +263,20 @@ blah: 'blah',
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate usage with spread operations and computed properties', t => {
   try {
-    ruleTester.run('sort-object-keys', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `const object = {
   bar: 'bar',
   foo: 'foo',
   ...spread,
-  [baz]: 'baz', 
+  [baz]: 'baz',
   quz: 'quz',
   ...otherSpread,
   blah: 'blah',
@@ -318,20 +317,20 @@ blah: 'blah',
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate usage with spread operations and complex computed properties but not fix them', t => {
   try {
-    ruleTester.run('sort-object-keys', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `const object = {
   bar: 'bar',
   foo: 'foo',
   ...spread,
-  [baz]: 'baz', 
+  [baz]: 'baz',
   [quz.blah]: 'quz',
   ...otherSpread,
   blah: 'blah',
@@ -345,7 +344,7 @@ test('if the rule will validate usage with spread operations and complex compute
   bar: 'bar',
   ...spread,
   [quz.blah]: 'quz',
-  [baz]: 'baz', 
+  [baz]: 'baz',
   ...otherSpread,
   blah: 'blah',
 }`.trim(),
@@ -359,7 +358,7 @@ test('if the rule will validate usage with spread operations and complex compute
   bar: 'bar',
   ...spread,
   [quz.blah]: 'quz',
-  [baz]: 'baz', 
+  [baz]: 'baz',
   ...otherSpread,
   blah: 'blah',
 }`.trim(),
@@ -369,13 +368,13 @@ test('if the rule will validate usage with spread operations and complex compute
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate the numeric key usage with natural ordering', t => {
   try {
-    ruleTester.run('sort-object-keys', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `const object = {
@@ -410,6 +409,6 @@ test('if the rule will validate the numeric key usage with natural ordering', t 
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });

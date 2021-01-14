@@ -1,4 +1,3 @@
-// test
 const test = require('ava');
 const {RuleTester} = require('eslint');
 
@@ -9,20 +8,20 @@ const ruleTester = new RuleTester({
   },
 });
 
-// src
-const rule = require('lib/rules/named-import-newline');
+const ruleName = 'named-import-newline';
+const ruleFile = require('lib/rules/named-import-newline');
 
 test('if the rule will validate the basic usage', t => {
   try {
-    ruleTester.run('named-import-newline', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `
   import {
-    foo, 
-    bar, 
+    foo,
+    bar,
     baz
-  } from "package";`.trim(),
+  } from "package";`,
         },
       ],
       invalid: [
@@ -36,27 +35,28 @@ test('if the rule will validate the basic usage', t => {
               message: 'Imported properties must go on a new line.',
             },
           ],
+          output: 'import {foo,\nbar,\nbaz} from "package";',
         },
       ],
     });
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate the usage with aliasing', t => {
   try {
-    ruleTester.run('named-import-newline', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `
   import {
-    foo, 
-    bar as quz, 
+    foo,
+    bar as quz,
     baz
-  } from "package";`.trim(),
+  } from "package";`,
         },
       ],
       invalid: [
@@ -70,25 +70,26 @@ test('if the rule will validate the usage with aliasing', t => {
               message: 'Imported properties must go on a new line.',
             },
           ],
+          output: 'import {foo,\nbar as quz,\nbaz} from "package";',
         },
       ],
     });
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate the usage where multiple properties are allow per line', t => {
   try {
-    ruleTester.run('named-import-newline', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: `
   import {
     foo, bar, baz
-  } from "package";`.trim(),
+  } from "package";`,
           options: [
             {
               allowMultipleImportsPerLine: true,
@@ -107,12 +108,13 @@ test('if the rule will validate the usage where multiple properties are allow pe
               message: 'Imported properties must go on a new line.',
             },
           ],
+          output: 'import {foo,\nbar,\nbaz} from "package";',
         },
       ],
     });
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });

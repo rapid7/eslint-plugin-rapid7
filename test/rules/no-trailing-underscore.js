@@ -1,4 +1,3 @@
-// test
 const test = require('ava');
 const {RuleTester} = require('eslint');
 
@@ -9,12 +8,12 @@ const ruleTester = new RuleTester({
   },
 });
 
-// src
-const rule = require('lib/rules/no-trailing-underscore');
+const ruleName = 'no-trailing-underscore';
+const ruleFile = require('lib/rules/no-trailing-underscore');
 
 test('if the rule will validate the variable usage', t => {
   try {
-    ruleTester.run('no-trailing-underscore', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: 'const foo = "foo";',
@@ -32,16 +31,15 @@ test('if the rule will validate the variable usage', t => {
         },
       ],
     });
-
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate the function usage', t => {
   try {
-    ruleTester.run('no-trailing-underscore', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: 'function foo() {}',
@@ -62,13 +60,13 @@ test('if the rule will validate the function usage', t => {
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate the object value property usage', t => {
   try {
-    ruleTester.run('no-trailing-underscore', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: 'object.foo;',
@@ -89,13 +87,13 @@ test('if the rule will validate the object value property usage', t => {
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate the object class method usage', t => {
   try {
-    ruleTester.run('no-trailing-underscore', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: 'class Bar {foo() {}}',
@@ -118,13 +116,13 @@ test('if the rule will validate the object class method usage', t => {
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
 
 test('if the rule will validate the object function property usage', t => {
   try {
-    ruleTester.run('no-trailing-underscore', rule, {
+    ruleTester.run(ruleName, ruleFile, {
       valid: [
         {
           code: 'const object = {foo() {}};',
@@ -147,6 +145,6 @@ test('if the rule will validate the object function property usage', t => {
 
     t.pass();
   } catch (error) {
-    t.fail(error);
+    t.fail(error.message);
   }
 });
