@@ -36,5 +36,5 @@
     "test": "NODE_PATH=. NODE_ENV=test ava",
     "test:watch": "npm run test -- --watch"
   },
-  "version": "7.3.5-1"
+  "version": "8.0.0-0"
 }
