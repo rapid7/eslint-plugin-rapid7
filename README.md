@@ -26,7 +26,15 @@ Enable the rules that you would like to use.
 {
   "rules": {
     "rapid7/named-import-newline": 1,
-    "rapid7/sort-object-keys": [2, {"caseSensitive": false}]
+    "rapid7/no-trailing-underscore": [2, {
+      "allow": [
+        "__REDUX_DEVTOOLS_EXTENSION__"
+      ],
+      "allowAfterSuper": false,
+      "allowAfterThis": false,
+      "enforceInMethodNames": true,
+      "enforceInPropertyNames": true
+    }]
   }
 }
 ```
@@ -35,4 +43,3 @@ Enable the rules that you would like to use.
 
 - [named-import-newline](docs/named-import-newline.md): Enforce newlines between named imports from a package (fixable)
 - [no-trailing-underscore](docs/no-trailing-underscore.md): Enforce no trailing underscore on variable / method names
-- [sort-object-keys](docs/sort-object-keys.md): Enforce object keys sorted alphabetically (fixable)
